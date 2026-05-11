@@ -1,0 +1,192 @@
+{% extends "panel/base.html" %}
+{% block title %}{{ t.page_risk }} — Cyber Aware{% endblock %}
+{% block breadcrumb %}{{ t.page_risk }}{% endblock %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<div class="page-header">
+  <div class="page-header-left">
+    <h1>{{ t.page_risk }}</h1>
+    <p>{{ t.page_risk_sub }}</p>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;">
+  <div class="card" style="padding:20px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <span style="font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;">{{ t.lbl_total_targets }}</span>
+      <div style="width:32px;height:32px;border-radius:8px;background:#eff6ff;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#3b82f6;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+    </div>
+    <div style="font-size:28px;font-weight:700;letter-spacing:-1px;color:#2563eb;">{{ total }}</div>
+  </div>
+  <div class="card" style="padding:20px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <span style="font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;">{{ t.lbl_med_risk }}</span>
+      <div style="width:32px;height:32px;border-radius:8px;background:#fffbeb;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#f59e0b;"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+    </div>
+    <div style="font-size:28px;font-weight:700;letter-spacing:-1px;color:#d97706;">{{ med_risk }}</div>
+  </div>
+  <div class="card" style="padding:20px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <span style="font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;">{{ t.lbl_high_risk }}</span>
+      <div style="width:32px;height:32px;border-radius:8px;background:#fef2f2;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#ef4444;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+    </div>
+    <div style="font-size:28px;font-weight:700;letter-spacing:-1px;color:#dc2626;">{{ high_risk }}</div>
+  </div>
+</div>
+
+{% if groups_risk %}
+<div class="card" style="margin-bottom:20px;">
+  <div class="card-header">
+    <h2>{{ t.sec_group_chart }}</h2>
+    <span style="font-size:12px;color:var(--text-3);">{{ t.sec_group_chart_sub }}</span>
+  </div>
+  <div class="card-body"><canvas id="groupChart" height="90"></canvas></div>
+</div>
+
+<div class="card" style="margin-bottom:20px;">
+  <div class="card-header"><h2>{{ t.sec_group_table }}</h2></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>{{ t.th_group_col }}</th><th>{{ t.th_count }}</th>
+          <th>{{ t.th_click }}</th><th>{{ t.th_cred }}</th>
+          <th>{{ t.th_avg }}</th><th>{{ t.th_risk }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for g in groups_risk %}
+        <tr>
+          <td>
+            <a href="/panel/targets/group/{{ g.group }}/" style="font-weight:600;color:var(--accent);text-decoration:none;">{{ g.group }}</a>
+          </td>
+          <td style="color:var(--text-2);">{{ g.count }}</td>
+          <td>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="height:5px;background:#f1f5f9;border-radius:99px;width:80px;overflow:hidden;">
+                <div style="height:100%;width:{{ g.click_rate }}%;background:#f87171;border-radius:99px;"></div>
+              </div>
+              <span style="font-size:12px;color:var(--text-2);">%{{ g.click_rate }}</span>
+            </div>
+          </td>
+          <td>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="height:5px;background:#f1f5f9;border-radius:99px;width:80px;overflow:hidden;">
+                <div style="height:100%;width:{{ g.sub_rate }}%;background:#a78bfa;border-radius:99px;"></div>
+              </div>
+              <span style="font-size:12px;color:var(--text-2);">%{{ g.sub_rate }}</span>
+            </div>
+          </td>
+          <td style="font-weight:600;">{{ g.avg_score }}</td>
+          <td>
+            {% if g.risk_class == 'high' %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#fef2f2;color:#dc2626;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_high }}</span>
+            {% elif g.risk_class == 'medium' %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#fffbeb;color:#d97706;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_medium }}</span>
+            {% elif g.risk_class == 'low' %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#eff6ff;color:#3b82f6;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_low }}</span>
+            {% else %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#f0fdf4;color:#15803d;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_safe }}</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+<div class="card">
+  <div class="card-header"><h2>{{ t.sec_target_table }}</h2></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>{{ t.th_person }}</th><th>{{ t.th_group_col }}</th>
+          <th>{{ t.th_sent }}</th><th>{{ t.th_clicked_col }}</th>
+          <th>{{ t.th_cred }}</th><th>{{ t.th_score }}</th><th>{{ t.th_risk }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in targets_risk %}
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:32px;height:32px;border-radius:50%;
+                {% if r.risk_class == 'high' %}background:#fef2f2;color:#dc2626;
+                {% elif r.risk_class == 'medium' %}background:#fffbeb;color:#d97706;
+                {% elif r.risk_class == 'low' %}background:#eff6ff;color:#3b82f6;
+                {% else %}background:#f0fdf4;color:#16a34a;{% endif %}
+                display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">
+                {{ r.target.first_name|slice:":1" }}{{ r.target.last_name|slice:":1" }}
+              </div>
+              <div>
+                <div style="font-weight:500;">{{ r.target.first_name }} {{ r.target.last_name }}</div>
+                <div style="font-size:12px;color:var(--text-3);">{{ r.target.email }}</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            {% if r.target.group %}
+              <a href="/panel/targets/group/{{ r.target.group }}/" style="background:#eff6ff;color:#3b82f6;padding:2px 8px;border-radius:99px;font-size:12px;font-weight:500;text-decoration:none;">{{ r.target.group }}</a>
+            {% else %}<span style="color:var(--text-3);">—</span>{% endif %}
+          </td>
+          <td style="color:var(--text-2);">{{ r.sent }}</td>
+          <td style="color:var(--text-2);">{{ r.clicked }}</td>
+          <td style="color:var(--text-2);">{{ r.submitted }}</td>
+          <td><span style="font-size:18px;font-weight:700;{% if r.risk_class == 'high' %}color:#dc2626;{% elif r.risk_class == 'medium' %}color:#d97706;{% elif r.risk_class == 'low' %}color:#3b82f6;{% else %}color:#16a34a;{% endif %}">{{ r.score }}</span></td>
+          <td>
+            {% if r.risk_class == 'high' %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#fef2f2;color:#dc2626;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_high }}</span>
+            {% elif r.risk_class == 'medium' %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#fffbeb;color:#d97706;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_medium }}</span>
+            {% elif r.risk_class == 'low' %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#eff6ff;color:#3b82f6;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_low }}</span>
+            {% else %}
+              <span style="display:inline-flex;align-items:center;gap:5px;background:#f0fdf4;color:#15803d;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;"><span style="width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;"></span>{{ t.risk_safe }}</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="7" style="text-align:center;padding:56px;color:var(--text-3);">{{ t.lbl_no_data }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+Chart.defaults.font.family = "system-ui, -apple-system, 'Segoe UI', sans-serif";
+Chart.defaults.color = '#94a3b8';
+const groupChartEl = document.getElementById('groupChart');
+if (groupChartEl) {
+  new Chart(groupChartEl, {
+    type: 'bar',
+    data: {
+      labels: {{ chart_groups|safe }},
+      datasets: [
+        { label: '{{ t.chart_click_lbl }}', data: {{ chart_click_rate|safe }}, backgroundColor: '#fca5a5', borderRadius: 4 },
+        { label: '{{ t.chart_cred_lbl }}',  data: {{ chart_sub_rate|safe }},   backgroundColor: '#c4b5fd', borderRadius: 4 },
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, boxHeight: 10, padding: 16, font: { size: 12 } } } },
+      scales: {
+        y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' }, grid: { color: '#f1f5f9' }, border: { display: false } },
+        x: { grid: { display: false }, border: { display: false } }
+      }
+    }
+  });
+}
+</script>
+{% endblock %}

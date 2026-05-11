@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ t.dash_title }} — Cyber Aware</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --sidebar-w: 248px;
+      --bg: #f8fafc;
+      --sidebar-bg: #0b0f1a;
+      --sidebar-border: rgba(255,255,255,.05);
+      --sidebar-hover: rgba(255,255,255,.06);
+      --accent: #6366f1;
+      --accent-dim: rgba(99,102,241,.12);
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text-1: #0f172a;
+      --text-2: #475569;
+      --text-3: #94a3b8;
+      --radius: 10px;
+      --shadow: 0 1px 2px rgba(0,0,0,.05), 0 0 0 1px rgba(0,0,0,.04);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text-1);
+      font-size: 14px; line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Sidebar (same as base) ── */
+    .sidebar {
+      position: fixed; inset: 0 auto 0 0;
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      display: flex; flex-direction: column;
+      z-index: 200; border-right: 1px solid var(--sidebar-border);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 20px 20px 18px; border-bottom: 1px solid var(--sidebar-border); }
+    .sidebar-logo .logo-icon { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), #818cf8); display: flex; align-items: center; justify-content: center; }
+    .sidebar-logo .logo-icon svg { width: 16px; height: 16px; stroke: #fff; }
+    .sidebar-logo .logo-text { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -.3px; }
+    .sidebar-logo .logo-text span { color: #818cf8; }
+    .sidebar-section { padding: 20px 12px 8px; }
+    .sidebar-section-label { font-size: 10px; font-weight: 600; color: var(--text-3); letter-spacing: .08em; text-transform: uppercase; padding: 0 8px; margin-bottom: 4px; }
+    .nav-link { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 7px; color: #94a3b8; text-decoration: none; font-size: 13.5px; font-weight: 500; transition: background .12s, color .12s; margin-bottom: 1px; }
+    .nav-link svg { width: 16px; height: 16px; stroke: currentColor; flex-shrink: 0; opacity: .7; }
+    .nav-link:hover { background: var(--sidebar-hover); color: #e2e8f0; }
+    .nav-link.active { background: var(--accent-dim); color: #a5b4fc; }
+    .nav-link.active svg { opacity: 1; stroke: #a5b4fc; }
+    .sidebar-spacer { flex: 1; }
+    .sidebar-footer { padding: 12px; border-top: 1px solid var(--sidebar-border); }
+
+    /* ── Main ── */
+    .main { margin-left: var(--sidebar-w); min-height: 100vh; display: flex; flex-direction: column; }
+    .topbar { position: sticky; top: 0; z-index: 100; background: rgba(248,250,252,.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-2); }
+    .topbar-breadcrumb span { color: var(--text-3); }
+    .topbar-right { display: flex; align-items: center; gap: 10px; }
+    .topbar-user { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-2); }
+    .topbar-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(99,102,241,.25); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+    .btn-logout { display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; height: 32px; border: 1px solid var(--border); border-radius: 6px; background: #fff; color: var(--text-2); font-size: 12.5px; font-weight: 500; cursor: pointer; font-family: inherit; box-shadow: 0 1px 2px rgba(0,0,0,.04); transition: border-color .12s, color .12s; }
+    .btn-logout svg { width: 13px; height: 13px; stroke: currentColor; opacity: .6; }
+    .btn-logout:hover { border-color: #ef4444; color: #ef4444; }
+    .lang-switcher { display: flex; align-items: center; gap: 2px; padding: 2px; background: #f1f5f9; border-radius: 6px; border: 1px solid var(--border); }
+    .lang-btn { height: 22px; padding: 0 8px; border-radius: 4px; border: none; background: transparent; font-size: 11px; font-weight: 700; cursor: pointer; font-family: inherit; color: var(--text-3); transition: all .12s; letter-spacing: .04em; }
+    .lang-btn:hover { color: var(--text-1); }
+    .lang-btn.active { background: #fff; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    .page-body { padding: 28px 32px 48px; }
+
+    /* ── Stat grid ── */
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .stat-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .stat-card-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; }
+    .stat-card-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .stat-card-icon svg { width: 16px; height: 16px; }
+    .stat-card-value { font-size: 28px; font-weight: 700; letter-spacing: -1px; line-height: 1; }
+    .stat-card-sub { font-size: 12px; color: var(--text-3); margin-top: 5px; }
+
+    .ic-sent     { background: #eff6ff; } .ic-sent svg     { stroke: #3b82f6; }
+    .ic-opened   { background: #fffbeb; } .ic-opened svg   { stroke: #f59e0b; }
+    .ic-clicked  { background: #fef2f2; } .ic-clicked svg  { stroke: #ef4444; }
+    .ic-submit   { background: #f5f3ff; } .ic-submit svg   { stroke: #8b5cf6; }
+
+    .val-sent    { color: #2563eb; }
+    .val-opened  { color: #d97706; }
+    .val-clicked { color: #dc2626; }
+    .val-submit  { color: #7c3aed; }
+
+    /* ── Chart grid ── */
+    .chart-grid { display: grid; grid-template-columns: 5fr 3fr; gap: 16px; margin-bottom: 24px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .card-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid var(--border); }
+    .card-header h2 { font-size: 13.5px; font-weight: 600; color: var(--text-1); }
+    .card-header .card-sub { font-size: 12px; color: var(--text-3); }
+    .card-body { padding: 20px; }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    thead th { padding: 10px 16px; text-align: left; font-size: 11.5px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; background: #f8fafc; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    tbody td { padding: 13px 16px; border-bottom: 1px solid #f1f5f9; color: var(--text-1); vertical-align: middle; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: #f8fafc; }
+
+    .badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 600; }
+    .badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+    .badge-running   { background: #dcfce7; color: #15803d; }
+    .badge-completed { background: #f1f5f9; color: #475569; }
+    .badge-scheduled { background: #eff6ff; color: #3b82f6; }
+
+    .progress { height: 5px; background: #f1f5f9; border-radius: 99px; min-width: 72px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 99px; background: var(--accent); }
+
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; height: 30px; border-radius: 6px; font-size: 12.5px; font-weight: 600; cursor: pointer; text-decoration: none; border: 1px solid var(--border); background: #fff; color: var(--text-2); transition: all .12s; white-space: nowrap; font-family: inherit; }
+    .btn:hover { background: #f8fafc; color: var(--text-1); }
+    .btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-accent:hover { background: #4f46e5; }
+
+    .page-header { margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; }
+    .page-header h1 { font-size: 20px; font-weight: 700; letter-spacing: -.4px; }
+    .page-header p  { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+    <div class="logo-text">Cyber<span>Aware</span></div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">{{ t.sec_general }}</div>
+    <a href="/dashboard/" class="nav-link active">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      {{ t.nav_dashboard }}
+    </a>
+    <a href="/panel/risk/" class="nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      {{ t.nav_risk }}
+    </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">{{ t.sec_campaigns }}</div>
+    <a href="/panel/campaigns/" class="nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      {{ t.nav_campaigns }}
+    </a>
+    <a href="/panel/campaigns/new/" class="nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      {{ t.nav_new_campaign }}
+    </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">{{ t.sec_targets }}</div>
+    <a href="/panel/targets/" class="nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      {{ t.nav_targets }}
+    </a>
+    <a href="/targets/import/" class="nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></svg>
+      {{ t.nav_csv }}
+    </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">{{ t.sec_templates }}</div>
+    <a href="/panel/templates/" class="nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      {{ t.nav_templates }}
+    </a>
+  </div>
+  <div class="sidebar-spacer"></div>
+  <div class="sidebar-footer">
+    <a href="/admin/" class="nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+      {{ t.nav_admin }}
+    </a>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-breadcrumb">
+      Cyber<strong>Aware</strong> <span>/</span> Dashboard
+    </div>
+    <div class="topbar-right">
+      <div class="lang-switcher">
+        <form method="post" action="/lang/set/" style="display:contents">
+          {% csrf_token %}
+          <button type="submit" name="lang" value="tr" class="lang-btn {% if LANG == 'tr' %}active{% endif %}">TR</button>
+          <button type="submit" name="lang" value="en" class="lang-btn {% if LANG == 'en' %}active{% endif %}">EN</button>
+        </form>
+      </div>
+      <div class="topbar-user">
+        <div class="topbar-avatar">{{ request.user.username|first }}</div>
+        {{ request.user.username }}
+      </div>
+      <form method="post" action="/logout/" style="margin:0">
+        {% csrf_token %}
+        <button type="submit" class="btn-logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          {{ t.nav_logout }}
+        </button>
+      </form>
+    </div>
+    <a href="/panel/campaigns/new/" class="btn btn-accent">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;stroke:#fff;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      {{ t.nav_new_campaign }}
+    </a>
+  </div>
+
+  <div class="page-body">
+    <div class="page-header">
+      <div>
+        <h1>{{ t.dash_title }}</h1>
+        <p>{{ t.dash_sub }}</p>
+      </div>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-top">
+          <div class="stat-card-label">{{ t.stat_sent }}</div>
+          <div class="stat-card-icon ic-sent">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+        </div>
+        <div class="stat-card-value val-sent">{{ total_sent }}</div>
+        <div class="stat-card-sub">{{ t.stat_sent_sub }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-top">
+          <div class="stat-card-label">{{ t.stat_opened }}</div>
+          <div class="stat-card-icon ic-opened">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+        </div>
+        <div class="stat-card-value val-opened">{{ total_opened }}</div>
+        <div class="stat-card-sub">{{ t.stat_opened_sub }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-top">
+          <div class="stat-card-label">{{ t.stat_clicked }}</div>
+          <div class="stat-card-icon ic-clicked">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+        </div>
+        <div class="stat-card-value val-clicked">{{ total_clicked }}</div>
+        <div class="stat-card-sub">{{ t.stat_clicked_sub }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-top">
+          <div class="stat-card-label">{{ t.stat_submitted }}</div>
+          <div class="stat-card-icon ic-submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+        </div>
+        <div class="stat-card-value val-submit">{{ total_submitted }}</div>
+        <div class="stat-card-sub">{{ t.stat_submitted_sub }}</div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="chart-grid">
+      <div class="card">
+        <div class="card-header">
+          <h2>{{ t.dash_chart1 }}</h2>
+          <span class="card-sub">{{ t.dash_chart1_sub }}</span>
+        </div>
+        <div class="card-body">
+          <canvas id="barChart" height="140"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>{{ t.dash_chart2 }}</h2>
+          <span class="card-sub">{{ t.dash_chart2_sub }}</span>
+        </div>
+        <div class="card-body" style="display:flex;align-items:center;justify-content:center;">
+          <div style="max-width:200px;width:100%;">
+            <canvas id="donutChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campaign Table -->
+    <div class="card">
+      <div class="card-header">
+        <h2>{{ t.page_campaigns }}</h2>
+        <a href="/panel/campaigns/" class="btn">{{ t.dash_see_all }}</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>{{ t.th_campaign }}</th>
+              <th>{{ t.th_status }}</th>
+              <th>{{ t.th_sent }}</th>
+              <th>{{ t.th_opened }}</th>
+              <th>{{ t.th_clicked }}</th>
+              <th>{{ t.th_submitted }}</th>
+              <th>{{ t.th_click_rate }}</th>
+              <th>{{ t.th_report }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in campaign_data %}
+            <tr>
+              <td style="font-weight:600;">{{ item.campaign.campaign_name }}</td>
+              <td><span class="badge badge-{{ item.campaign.status|lower }}">{{ item.campaign.status }}</span></td>
+              <td>{{ item.sent }}</td>
+              <td>{{ item.opened }}</td>
+              <td>{{ item.clicked }}</td>
+              <td>{{ item.submitted }}</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div class="progress">
+                    <div class="progress-fill" style="width:{{ item.click_rate_num }}%;"></div>
+                  </div>
+                  <span style="font-size:12px;color:var(--text-2);font-variant-numeric:tabular-nums;">{{ item.click_rate }}</span>
+                </div>
+              </td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <a href="/report/{{ item.campaign.id }}/pdf/"  class="btn" style="font-size:11.5px;padding:0 8px;height:26px;">PDF</a>
+                  <a href="/report/{{ item.campaign.id }}/docx/" class="btn" style="font-size:11.5px;padding:0 8px;height:26px;">Word</a>
+                </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="8" style="text-align:center;padding:48px;color:var(--text-3);">
+                {{ t.no_campaign_data }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+Chart.defaults.font.family = "'Inter', -apple-system, sans-serif";
+Chart.defaults.color = '#94a3b8';
+
+new Chart(document.getElementById('barChart'), {
+  type: 'bar',
+  data: {
+    labels: {{ chart_labels|safe }},
+    datasets: [
+      { label: '{{ t.stat_sent }}',      data: {{ chart_sent|safe }},      backgroundColor: '#bfdbfe', borderRadius: 4 },
+      { label: '{{ t.stat_opened }}',    data: {{ chart_opened|safe }},    backgroundColor: '#fde68a', borderRadius: 4 },
+      { label: '{{ t.stat_clicked }}',   data: {{ chart_clicked|safe }},   backgroundColor: '#fca5a5', borderRadius: 4 },
+      { label: '{{ t.stat_submitted }}', data: {{ chart_submitted|safe }}, backgroundColor: '#ddd6fe', borderRadius: 4 },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, boxHeight: 10, padding: 16, font: { size: 12 } } } },
+    scales: {
+      x: { grid: { display: false }, border: { display: false } },
+      y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: '#f1f5f9' }, border: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('donutChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['{{ t.donut_opened }}', '{{ t.donut_clicked }}', '{{ t.donut_submitted }}', '{{ t.donut_unopened }}'],
+    datasets: [{ data: {{ donut_data|safe }}, backgroundColor: ['#fbbf24','#f87171','#a78bfa','#e2e8f0'], borderWidth: 0, hoverOffset: 4 }]
+  },
+  options: {
+    cutout: '70%',
+    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, boxHeight: 10, padding: 12, font: { size: 11 } } } }
+  }
+});
+</script>
+</body>
+</html>

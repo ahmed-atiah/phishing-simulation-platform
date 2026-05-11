@@ -1,0 +1,149 @@
+{% extends "panel/base.html" %}
+{% block title %}{{ group_name }} — Cyber Aware{% endblock %}
+{% block breadcrumb %}{{ t.page_targets }} / {{ group_name }}{% endblock %}
+
+{% block content %}
+<style>
+  .status-icon { width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+  .status-icon svg { width:11px;height:11px; }
+  .si-yes-submit { background:#ede9fe; }
+  .si-yes-submit svg { stroke:#7c3aed; }
+  .si-yes-click  { background:#dcfce7; }
+  .si-yes-click svg { stroke:#15803d; }
+  .si-yes-open   { background:#fef9c3; }
+  .si-yes-open svg { stroke:#a16207; }
+  .si-no         { background:#f8fafc; }
+  .si-no svg     { stroke:#cbd5e1; }
+  .si-unsent     { background:#f1f5f9; }
+  .camp-card { margin-bottom:24px; }
+  .camp-card-header { display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:10px; }
+  .camp-card-title { font-size:14px;font-weight:700;color:var(--text-1); }
+  .camp-card-meta { font-size:12.5px;color:var(--text-3);margin-top:2px; }
+  .mini-stat { display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-2); }
+  .mini-stat strong { color:var(--text-1);font-size:15px;font-weight:700; }
+  .mini-stats { display:flex;gap:20px;flex-wrap:wrap; }
+</style>
+
+<div class="page-header">
+  <div class="page-header-left">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+      <a href="/panel/targets/" style="display:inline-flex;align-items:center;gap:5px;color:var(--text-3);font-size:13px;text-decoration:none;font-weight:500;">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;stroke:currentColor;"><polyline points="15 18 9 12 15 6"/></svg>
+        {{ t.lbl_back_targets }}
+      </a>
+    </div>
+    <h1>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke:var(--accent);display:inline;vertical-align:middle;margin-right:6px;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      {{ group_name }}
+    </h1>
+    <p>{{ target_count }} {{ t.lbl_members }}</p>
+  </div>
+</div>
+
+{% if campaigns_data %}
+  {% for cd in campaigns_data %}
+  <div class="card camp-card">
+    <div class="camp-card-header">
+      <div>
+        <div class="camp-card-title">{{ cd.campaign.campaign_name }}</div>
+        <div class="camp-card-meta">
+          {{ cd.campaign.start_date|date:"d.m.Y" }} — {{ cd.campaign.end_date|date:"d.m.Y" }}
+          &nbsp;·&nbsp;
+          <span class="badge badge-{{ cd.campaign.status|lower }}" style="font-size:11px;">
+            {% if cd.campaign.status == 'Scheduled' %}{{ t.st_scheduled }}
+            {% elif cd.campaign.status == 'Running' %}{{ t.st_running }}
+            {% else %}{{ t.st_completed }}{% endif %}
+          </span>
+        </div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini-stat"><strong>{{ cd.sent_count }}</strong> {{ t.lbl_sent }}</div>
+        <div class="mini-stat"><strong style="color:#a16207;">{{ cd.opened_count }}</strong> {{ t.lbl_opened_ev }}</div>
+        <div class="mini-stat"><strong style="color:#15803d;">{{ cd.clicked_count }}</strong> {{ t.lbl_clicked_ev }}</div>
+        <div class="mini-stat"><strong style="color:#7c3aed;">{{ cd.submitted_count }}</strong> {{ t.lbl_submitted_ev }}</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>{{ t.th_fullname }}</th>
+            <th>{{ t.th_email }}</th>
+            <th style="text-align:center;">{{ t.lbl_sent }}</th>
+            <th style="text-align:center;">{{ t.lbl_opened_ev }}</th>
+            <th style="text-align:center;">{{ t.lbl_clicked_ev }}</th>
+            <th style="text-align:center;">{{ t.lbl_submitted_ev }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in cd.rows %}
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:30px;height:30px;border-radius:50%;background:var(--accent-dim);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--accent);flex-shrink:0;">
+                  {{ row.target.first_name|slice:":1" }}{{ row.target.last_name|slice:":1" }}
+                </div>
+                <span style="font-weight:500;">{{ row.target.first_name }} {{ row.target.last_name }}</span>
+              </div>
+            </td>
+            <td style="color:var(--text-2);font-size:13px;">{{ row.target.email }}</td>
+            <!-- Gönderildi -->
+            <td style="text-align:center;">
+              {% if row.sent %}
+                <div class="status-icon si-yes-click" style="margin:auto;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              {% else %}
+                <div class="status-icon si-unsent" style="margin:auto;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </div>
+              {% endif %}
+            </td>
+            <!-- Açıldı -->
+            <td style="text-align:center;">
+              {% if row.opened %}
+                <div class="status-icon si-yes-open" style="margin:auto;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              {% else %}
+                <span style="color:var(--text-3);font-size:13px;">—</span>
+              {% endif %}
+            </td>
+            <!-- Tıkladı -->
+            <td style="text-align:center;">
+              {% if row.clicked %}
+                <div class="status-icon si-yes-click" style="margin:auto;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              {% else %}
+                <span style="color:var(--text-3);font-size:13px;">—</span>
+              {% endif %}
+            </td>
+            <!-- Bilgi Girdi -->
+            <td style="text-align:center;">
+              {% if row.submitted %}
+                <div class="status-icon si-yes-submit" style="margin:auto;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              {% else %}
+                <span style="color:var(--text-3);font-size:13px;">—</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+  <div class="card" style="padding:64px;text-align:center;">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:44px;height:44px;stroke:#cbd5e1;margin:0 auto 16px;display:block;"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    <div style="font-weight:500;color:var(--text-2);margin-bottom:6px;">{{ t.no_campaign_in_group }}</div>
+    <a href="/panel/campaigns/new/" class="btn btn-primary" style="margin-top:12px;display:inline-flex;">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;stroke:#fff;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      {{ t.btn_new_campaign }}
+    </a>
+  </div>
+{% endif %}
+{% endblock %}

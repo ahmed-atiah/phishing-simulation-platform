@@ -1,0 +1,95 @@
+{% extends "panel/base.html" %}
+{% block title %}{{ t.page_campaigns }} — Cyber Aware{% endblock %}
+{% block breadcrumb %}{{ t.page_campaigns }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-header-left">
+    <h1>{{ t.page_campaigns }}</h1>
+    <p>{{ t.page_campaigns_sub }}</p>
+  </div>
+  <a href="/panel/campaigns/new/" class="btn btn-primary">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    {{ t.btn_new_campaign }}
+  </a>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>{{ t.th_campaign }}</th>
+          <th>{{ t.th_template }}</th>
+          <th>{{ t.th_target }}</th>
+          <th>{{ t.th_status }}</th>
+          <th>{{ t.th_start }}</th>
+          <th>{{ t.th_end }}</th>
+          <th>{{ t.th_actions }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in campaigns %}
+        <tr>
+          <td><div style="font-weight:600;color:var(--text-1);">{{ c.campaign_name }}</div></td>
+          <td style="color:var(--text-2);">{{ c.template.template_name }}</td>
+          <td>
+            {% if c.target_group %}
+              <a href="/panel/targets/group/{{ c.target_group }}/" style="display:inline-flex;align-items:center;gap:5px;background:#eff6ff;color:#3b82f6;padding:2px 8px;border-radius:99px;font-size:12px;font-weight:500;text-decoration:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px;stroke:#3b82f6;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                {{ c.target_group }}
+              </a>
+            {% else %}
+              <span style="color:var(--text-3);font-size:13px;">{{ t.lbl_manual }}</span>
+            {% endif %}
+          </td>
+          <td>
+            <span class="badge badge-{{ c.status|lower }}">
+              {% if c.status == 'Scheduled' %}{{ t.st_scheduled }}
+              {% elif c.status == 'Running' %}{{ t.st_running }}
+              {% else %}{{ t.st_completed }}{% endif %}
+            </span>
+          </td>
+          <td style="color:var(--text-2);font-size:13px;">{{ c.start_date|date:"d.m.Y" }}<br><span style="color:var(--text-3);">{{ c.start_date|date:"H:i" }}</span></td>
+          <td style="color:var(--text-2);font-size:13px;">{{ c.end_date|date:"d.m.Y" }}<br><span style="color:var(--text-3);">{{ c.end_date|date:"H:i" }}</span></td>
+          <td>
+            <div class="action-row">
+              {% if c.status == 'Scheduled' %}
+                <form method="post" action="/panel/campaigns/{{ c.id }}/launch/" style="display:inline;">
+                  {% csrf_token %}
+                  <button class="btn btn-sm btn-success" type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;stroke:#fff;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    {{ t.btn_launch }}
+                  </button>
+                </form>
+              {% endif %}
+              {% if c.status == 'Running' %}
+                <form method="post" action="/panel/campaigns/{{ c.id }}/complete/" style="display:inline;">
+                  {% csrf_token %}
+                  <button class="btn btn-sm btn-ghost" type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;stroke:currentColor;"><polyline points="20 6 9 17 4 12"/></svg>
+                    {{ t.btn_finish }}
+                  </button>
+                </form>
+              {% endif %}
+              <a href="/report/{{ c.id }}/pdf/"  class="btn btn-sm btn-ghost">PDF</a>
+              <a href="/report/{{ c.id }}/docx/" class="btn btn-sm btn-ghost">Word</a>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="7" style="text-align:center;padding:56px 0;color:var(--text-3);">
+            <div style="margin-bottom:12px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:40px;height:40px;stroke:#cbd5e1;margin:0 auto;display:block;"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div style="font-weight:500;color:var(--text-2);margin-bottom:6px;">{{ t.no_campaigns }}</div>
+            <div style="font-size:13px;">{{ t.no_campaigns_sub }} <a href="/panel/campaigns/new/" style="color:var(--accent);font-weight:500;text-decoration:none;">{{ t.no_campaigns_link }}</a>.</div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

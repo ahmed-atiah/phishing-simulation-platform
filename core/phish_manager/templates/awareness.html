@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="{{ LANG }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ t.aw_title }}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", sans-serif; background: #f0f2f5; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+
+    .card { background: #fff; border-radius: 16px; box-shadow: 0 4px 32px rgba(0,0,0,.1); max-width: 640px; width: 100%; overflow: hidden; }
+
+    .banner { background: linear-gradient(135deg, #f59e0b, #ef4444); padding: 36px 40px; text-align: center; color: #fff; }
+    .banner .icon { font-size: 3.5rem; margin-bottom: 12px; }
+    .banner h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
+    .banner p  { font-size: .95rem; opacity: .9; }
+
+    .safe-badge { background: #dcfce7; border: 1px solid #86efac; color: #15803d; border-radius: 8px; padding: 12px 20px; margin: 24px 32px 0; font-size: .875rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+
+    .tabs { display: flex; border-bottom: 1px solid #e5e7eb; margin: 24px 32px 0; }
+    .tab { padding: 10px 20px; font-size: .875rem; font-weight: 600; color: #6b7280; cursor: pointer; border-bottom: 3px solid transparent; transition: all .2s; }
+    .tab.active { color: #ef4444; border-color: #ef4444; }
+
+    .tab-content { display: none; padding: 24px 32px 32px; }
+    .tab-content.active { display: block; }
+
+    .indicator-list { display: flex; flex-direction: column; gap: 12px; }
+    .indicator { display: flex; gap: 14px; align-items: flex-start; padding: 14px; border-radius: 10px; background: #fef9f0; border: 1px solid #fde68a; }
+    .indicator .num { background: #f59e0b; color: #fff; font-weight: 700; font-size: .8rem; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .indicator h3 { font-size: .9rem; font-weight: 600; color: #92400e; margin-bottom: 3px; }
+    .indicator p  { font-size: .8rem; color: #78350f; }
+
+    .quiz-q { margin-bottom: 24px; }
+    .quiz-q p { font-size: .9rem; font-weight: 600; color: #1e293b; margin-bottom: 10px; }
+    .quiz-options { display: flex; flex-direction: column; gap: 8px; }
+    .quiz-opt { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid #e5e7eb; cursor: pointer; font-size: .875rem; color: #374151; transition: border-color .15s, background .15s; }
+    .quiz-opt:hover { border-color: #93c5fd; background: #eff6ff; }
+    .quiz-opt.correct { border-color: #22c55e; background: #dcfce7; color: #15803d; font-weight: 600; }
+    .quiz-opt.wrong   { border-color: #ef4444; background: #fee2e2; color: #991b1b; }
+    .quiz-opt input   { display: none; }
+
+    .btn-check { background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 11px 28px; font-size: .9rem; font-weight: 600; cursor: pointer; margin-top: 8px; }
+    .btn-check:hover { background: #1d4ed8; }
+
+    .score-box { display: none; text-align: center; padding: 20px; background: #f0f9ff; border-radius: 10px; margin-top: 16px; }
+    .score-box .score-num { font-size: 2.5rem; font-weight: 700; color: #2563eb; }
+    .score-box p { font-size: .9rem; color: #475569; margin-top: 4px; }
+
+    .tip { display: flex; gap: 12px; padding: 12px; border-radius: 8px; background: #f8fafc; margin-bottom: 10px; }
+    .tip .tip-icon { font-size: 1.3rem; }
+    .tip p { font-size: .85rem; color: #374151; }
+    .tip strong { color: #1e293b; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="banner">
+    <div class="icon">🎣</div>
+    <h1>{{ t.aw_banner_h1 }}</h1>
+    <p>{{ t.aw_banner_p }}</p>
+  </div>
+
+  <div class="safe-badge">{{ t.aw_safe }}</div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('indicators')">{{ t.aw_tab1 }}</div>
+    <div class="tab" onclick="showTab('quiz')">{{ t.aw_tab2 }}</div>
+    <div class="tab" onclick="showTab('tips')">{{ t.aw_tab3 }}</div>
+  </div>
+
+  <!-- Tab: Indicators -->
+  <div class="tab-content active" id="tab-indicators">
+    <p style="font-size:.875rem; color:#6b7280; margin-bottom:16px;">{{ t.aw_ind_intro }}</p>
+    <div class="indicator-list">
+      <div class="indicator">
+        <div class="num">1</div>
+        <div><h3>{{ t.aw_ind1_h }}</h3><p>{{ t.aw_ind1_p }}</p></div>
+      </div>
+      <div class="indicator">
+        <div class="num">2</div>
+        <div><h3>{{ t.aw_ind2_h }}</h3><p>{{ t.aw_ind2_p }}</p></div>
+      </div>
+      <div class="indicator">
+        <div class="num">3</div>
+        <div><h3>{{ t.aw_ind3_h }}</h3><p>{{ t.aw_ind3_p }}</p></div>
+      </div>
+      <div class="indicator">
+        <div class="num">4</div>
+        <div><h3>{{ t.aw_ind4_h }}</h3><p>{{ t.aw_ind4_p }}</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Quiz -->
+  <div class="tab-content" id="tab-quiz">
+    <div class="quiz-q">
+      <p>{{ t.aw_q1 }}</p>
+      <div class="quiz-options">
+        <label class="quiz-opt" data-correct="false"><input type="radio" name="q1"> {{ t.aw_q1a }}</label>
+        <label class="quiz-opt" data-correct="true"><input type="radio" name="q1"> {{ t.aw_q1b }}</label>
+        <label class="quiz-opt" data-correct="false"><input type="radio" name="q1"> {{ t.aw_q1c }}</label>
+      </div>
+    </div>
+    <div class="quiz-q">
+      <p>{{ t.aw_q2 }}</p>
+      <div class="quiz-options">
+        <label class="quiz-opt" data-correct="false"><input type="radio" name="q2"> {{ t.aw_q2a }}</label>
+        <label class="quiz-opt" data-correct="true"><input type="radio" name="q2"> {{ t.aw_q2b }}</label>
+        <label class="quiz-opt" data-correct="false"><input type="radio" name="q2"> {{ t.aw_q2c }}</label>
+      </div>
+    </div>
+    <div class="quiz-q">
+      <p>{{ t.aw_q3 }}</p>
+      <div class="quiz-options">
+        <label class="quiz-opt" data-correct="false"><input type="radio" name="q3"> {{ t.aw_q3a }}</label>
+        <label class="quiz-opt" data-correct="false"><input type="radio" name="q3"> {{ t.aw_q3b }}</label>
+        <label class="quiz-opt" data-correct="true"><input type="radio" name="q3"> {{ t.aw_q3c }}</label>
+      </div>
+    </div>
+    <button class="btn-check" onclick="checkQuiz()">{{ t.aw_btn_check }}</button>
+    <div class="score-box" id="scoreBox">
+      <div class="score-num" id="scoreNum"></div>
+      <p id="scoreMsg"></p>
+    </div>
+  </div>
+
+  <!-- Tab: Tips -->
+  <div class="tab-content" id="tab-tips">
+    <div class="tip"><div class="tip-icon">🔍</div><p>{{ t.aw_tip1 }}</p></div>
+    <div class="tip"><div class="tip-icon">🖱</div><p>{{ t.aw_tip2 }}</p></div>
+    <div class="tip"><div class="tip-icon">🔐</div><p>{{ t.aw_tip3 }}</p></div>
+    <div class="tip"><div class="tip-icon">⚡</div><p>{{ t.aw_tip4 }}</p></div>
+    <div class="tip"><div class="tip-icon">📞</div><p>{{ t.aw_tip5 }}</p></div>
+    <div class="tip"><div class="tip-icon">🛡</div><p>{{ t.aw_tip6 }}</p></div>
+  </div>
+</div>
+
+<script>
+var SCORE_MSGS = [
+  "{{ t.aw_score_0 }}",
+  "{{ t.aw_score_1 }}",
+  "{{ t.aw_score_2 }}",
+  "{{ t.aw_score_3 }}"
+];
+
+function showTab(name) {
+  var names = ['indicators', 'quiz', 'tips'];
+  document.querySelectorAll('.tab').forEach(function(tab, i) {
+    tab.classList.toggle('active', names[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(function(c) {
+    c.classList.remove('active');
+  });
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+function checkQuiz() {
+  var score = 0;
+  ['q1','q2','q3'].forEach(function(qName) {
+    document.querySelectorAll('input[name="' + qName + '"]').forEach(function(opt) {
+      var label = opt.closest('.quiz-opt');
+      var correct = label.dataset.correct === 'true';
+      if (opt.checked) {
+        label.classList.add(correct ? 'correct' : 'wrong');
+        if (correct) score++;
+      } else if (correct) {
+        label.classList.add('correct');
+      }
+    });
+  });
+  document.getElementById('scoreBox').style.display = 'block';
+  document.getElementById('scoreNum').textContent = score + ' / 3';
+  document.getElementById('scoreMsg').textContent = SCORE_MSGS[score] || SCORE_MSGS[0];
+}
+</script>
+</body>
+</html>
