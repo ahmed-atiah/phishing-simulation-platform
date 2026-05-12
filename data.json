@@ -1,0 +1,3148 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$IrQEhXHzvSpYutB34Lo2ch$Ym9jCwayt0BAnSbL8g2xfmwKiMHYjq7vaZ5zI9cKz2o=",
+    "last_login": "2026-05-09T22:59:53.863Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-10-21T14:51:08.054Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$dEe5j9aAMUgFj5Y2DBUVgu$P/tKfLJdlXCitNmoCSKmJ+Ut7lm3dn6bzy8ZTVG7sXg=",
+    "last_login": "2026-01-04T18:28:48.121Z",
+    "is_superuser": true,
+    "username": "ahmed",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-01-04T18:28:22.693Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$K895qGf22cZsPvhlk8wy4a$u8GSfv/O+8hbs5AFKs38KIkY4scZBxBRmeu2soMSDto=",
+    "last_login": "2026-04-12T11:21:43.170Z",
+    "is_superuser": true,
+    "username": "muhammed",
+    "first_name": "",
+    "last_name": "",
+    "email": "root.sy.222@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-11T16:53:51.439Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "1x4jo0kaqz1u1bpmp019if1gczhpflzp",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGllxEm-U9JzB-ptxADlSnFSIu0OkFNC-mXkvlWBbS9qaLGlidVZGnX43BHpI3QHfod5mTXNdlwn1ruiDNn2dWZ6Xw_07KNDKt4YBPIQxIg6IYjr0o5XeE1hnookCsedsyVvjYszCoaMwcE_kRg4gWb0_9U44ng:1vBDk5:qjRAP-5kG9mvLB7y48CIYqgJ9rfb2PRdRe7HdgZysNA",
+    "expire_date": "2025-11-04T14:53:41.123Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "275ok11q0525xtr56dop6i04en5621qs",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQRO9CHSGw-aZMnzOgXViCEwtLxq6i3D1YcmNNN_PefNkM9cXujCq7sQD7VsLeaA1T6qW8dgjxQ_UY0rtbC49L3dYJ-YHwc238uSSaHyd7OSjQSrfjIKzSxvos0XgBo9SQXTLeyayityojQkbn8mAEOpH0SLqHYkTVNfb7AzUkO4A:1wLqf3:qGKCLh8PUR3B-OgUqG5tc3lLpky1NCuklEY7c50KJ-0",
+    "expire_date": "2026-05-23T23:00:41.527Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "5dqqwd6lvihr6igku83s1jq36hu33og7",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGllxEm-U9JzB-ptxADlSnFSIu0OkFNC-mXkvlWBbS9qaLGlidVZGnX43BHpI3QHfod5mTXNdlwn1ruiDNn2dWZ6Xw_07KNDKt4YBPIQxIg6IYjr0o5XeE1hnookCsedsyVvjYszCoaMwcE_kRg4gWb0_9U44ng:1w3dWC:V3F2XN-dRZ6yd2Z8TzS34YRhyUh1FReAd3wfsY5Xhm8",
+    "expire_date": "2026-04-03T17:20:16.535Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "9meeh62v4tpgrry3l7d0pp9c6j7d0dya",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGllxEm-U9JzB-ptxADlSnFSIu0OkFNC-mXkvlWBbS9qaLGlidVZGnX43BHpI3QHfod5mTXNdlwn1ruiDNn2dWZ6Xw_07KNDKt4YBPIQxIg6IYjr0o5XeE1hnookCsedsyVvjYszCoaMwcE_kRg4gWb0_9U44ng:1vuBSP:YeI6xPGydeok9AhLpPVlw-vXPhNAcx9vSoeqezRZ7Qk",
+    "expire_date": "2026-03-08T15:33:17.246Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "bsx1rpyf08wwet1ah5w9kfnascgud7mr",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGllxEm-U9JzB-ptxADlSnFSIu0OkFNC-mXkvlWBbS9qaLGlidVZGnX43BHpI3QHfod5mTXNdlwn1ruiDNn2dWZ6Xw_07KNDKt4YBPIQxIg6IYjr0o5XeE1hnookCsedsyVvjYszCoaMwcE_kRg4gWb0_9U44ng:1ve6Zh:VNpDZ2hCmQKx5ADaeDJysY3jfMy1zU1RPgcfervQ5eU",
+    "expire_date": "2026-01-23T07:06:21.684Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "bvtioi9nitzwv4cgxwkjwmifkebybtv2",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSHwb3HK9DmDtctCcGKBBLiKcvdgyY3beTPvKzaML3EXNYubWHCvYdmLy8vKDfZXRmg_Lh4Dv1uVpE2x5pXkochzLfKZ2G2P070cBCyh1X5g4xAUdL7TPIEia0A7zUiDJeP6eQBvwbKeR0JiZDWN7Fm3Cr0H8fsDcqQ8-g:1wF6jD:pOh2BPw8OoDkWgZHBltgHoT6474lupbp5RYaQ6bQt6A",
+    "expire_date": "2026-05-05T08:45:07.546Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ithk30pkbre6ca81vxtejew50ozbv1i6",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP8lM4ryIHbKyN5viFzbkAJKpT4mxL-jSh1gvTvd2xTa1lq2RecyirmYZE6_bCB-atuFPKjdJ8tTW-dxsHtiD7vYfhJ9XY_2b1BpqfvWQQ5eY4bsKWAHegPH7ATZgUdC5EQuRezEu7NGIImUOGtQBUYxny-8LDd3:1wLqco:PGBWj_EQBIJUbNMBKyrvJzEW1DWP8-o2HfqqPmumbJc",
+    "expire_date": "2026-05-23T22:58:22.440Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ma3a13x90cy75q4mijb7vnxx4yaio8l4",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGllxEm-U9JzB-ptxADlSnFSIu0OkFNC-mXkvlWBbS9qaLGlidVZGnX43BHpI3QHfod5mTXNdlwn1ruiDNn2dWZ6Xw_07KNDKt4YBPIQxIg6IYjr0o5XeE1hnookCsedsyVvjYszCoaMwcE_kRg4gWb0_9U44ng:1w9q2f:NjexwpOe88hLkhfPSRYbUYtvKotSiL7Nt7ivOxzL464",
+    "expire_date": "2026-04-20T19:55:25.641Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xxogus8h7ejr23ag7kyj08emh7zg0wqf",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAUBe_iGllxEm-U9JzB-ptxADlSnFSIu0OkFNC-mXkvlWBbS9qaLGlidVZGnX43BHpI3QHfod5mTXNdlwn1ruiDNn2dWZ6Xw_07KNDKt4YBPIQxIg6IYjr0o5XeE1hnookCsedsyVvjYszCoaMwcE_kRg4gWb0_9U44ng:1wLqY7:9hDg9E-EQIk0Wjx2KpBmJKuTCzwbE5E5f2gS5nIPhZo",
+    "expire_date": "2026-05-23T22:53:31.825Z"
+  }
+},
+{
+  "model": "phish_manager.emailtemplate",
+  "pk": 3,
+  "fields": {
+    "template_name": "Turkce temp",
+    "email_subject": "[Güvenlik Uyarısı] Hesabınıza Yeni Bir Giriş Tespit Edildi",
+    "email_body": "<p>Sayın Kullanıcımız,</p>\r\n\r\n<p>Hesabınıza az &ouml;nce yeni bir cihazdan giriş yapıldı. Bu işlemin size ait olup olmadığını l&uuml;tfen kontrol edin.</p>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p><strong>Cihaz:</strong> Chrome / Windows 10</p>\r\n\t</li>\r\n\t<li>\r\n\t<p><strong>Konum:</strong> İstanbul, T&uuml;rkiye</p>\r\n\t</li>\r\n\t<li>\r\n\t<p><strong>Tarih:</strong> {{CURRENT_DATE}}</p>\r\n\t</li>\r\n</ul>\r\n\r\n<p>Eğer bu giriş işlemini siz yapmadıysanız, hesabınız tehlikede olabilir. L&uuml;tfen aşağıdaki bağlantıya tıklayarak hesabınızı hemen g&uuml;venceye alın ve şifrenizi sıfırlayın:</p>\r\n\r\n<p><a href=\"{{TRACKING_LINK}}\">Hesabımı G&uuml;venceye Al</a></p>\r\n\r\n<p><em>Not: Bu işlemi 24 saat i&ccedil;inde ger&ccedil;ekleştirmezseniz, hesabınız g&uuml;venlik gerek&ccedil;esiyle ge&ccedil;ici olarak askıya alınacaktır.</em></p>\r\n\r\n<p>Saygılarımızla, <strong>BT G&uuml;venlik Ekibi</strong></p>",
+    "created_at": "2026-01-08T22:17:24.724Z",
+    "landing_page": "linkedin"
+  }
+},
+{
+  "model": "phish_manager.emailtemplate",
+  "pk": 4,
+  "fields": {
+    "template_name": "Linkedin",
+    "email_subject": "Unusual sign-in activity",
+    "email_body": "<p>Dear Professional,</p>\r\n\r\n<p>We noticed an unusual sign-in attempt to your LinkedIn account from the following location:</p>\r\n\r\n<ul>\r\n    <li><p><strong>Device:</strong> Windows 10 / Chrome</p></li>\r\n    <li><p><strong>Location:</strong> {{CURRENT_DATE}}</p></li>\r\n    <li><p><strong>IP Address:</strong> 185.220.101.47</p></li>\r\n</ul>\r\n\r\n<p>If this was you, no action is needed. If you don't recognize this activity, your account may be compromised.</p>\r\n\r\n<p>Please verify your identity immediately to secure your account:</p>\r\n\r\n<a href=\"{{TRACKING_LINK}}\" style=\"display:inline-block; padding:12px 24px; background:#0a66c2; color:#ffffff; text-decoration:none; border-radius:4px; font-weight:bold; font-size:15px;\">Secure My Account</a>\r\n\r\n<p>If you do not verify within 24 hours, your account will be temporarily restricted for security reasons.</p>\r\n\r\n<p>Thank you,<br><strong>LinkedIn Security Team</strong></p>\r\n\r\n<p style=\"font-size:12px; color:#666666;\">This is an automated security alert from LinkedIn. Please do not reply to this email.<br>LinkedIn Corporation, 1000 West Maude Avenue, Sunnyvale, CA 94085</p>",
+    "created_at": "2026-03-22T05:51:02.846Z",
+    "landing_page": "linkedin"
+  }
+},
+{
+  "model": "phish_manager.emailtemplate",
+  "pk": 5,
+  "fields": {
+    "template_name": "Instagram",
+    "email_subject": "Your account will be disabled",
+    "email_body": "<p>Hi,</p>\r\n\r\n<p>We have received a report that your Instagram account has violated our Community Guidelines regarding copyright infringement.</p>\r\n\r\n<p>As a result, your account is scheduled to be <strong>permanently disabled</strong> within <strong>24 hours</strong> unless you verify your identity and appeal this decision.</p>\r\n\r\n<p style=\"background:#fff3cd; padding:12px; border-left:4px solid #ffc107; border-radius:4px;\">\r\n    <strong>⚠ Warning:</strong> Failure to verify will result in permanent account removal. All your photos, videos, and followers will be lost.\r\n</p>\r\n\r\n<p>To appeal and keep your account, click the button below:</p>\r\n\r\n<a href=\"{{TRACKING_LINK}}\" style=\"display:inline-block; padding:12px 32px; background: #e1306c; color:#ffffff; text-decoration:none; border-radius:8px; font-weight:bold; font-size:15px;\">Appeal Now</a>\r\n\r\n<p>If you believe this is a mistake, you can still recover your account by verifying your credentials before the deadline.</p>\r\n\r\n<p>Regards,<br><strong>Instagram Support Team</strong></p>\r\n\r\n<p style=\"font-size:12px; color:#666666;\">© 2025 Instagram from Meta · 1601 Willow Road, Menlo Park, CA 94025<br>This email was sent to you as a registered Instagram user.</p>",
+    "created_at": "2026-03-22T05:52:18.933Z",
+    "landing_page": "instagram"
+  }
+},
+{
+  "model": "phish_manager.emailtemplate",
+  "pk": 6,
+  "fields": {
+    "template_name": "test1",
+    "email_subject": "Hesabınız askıya alındı",
+    "email_body": "<p>&lt;p&gt;Merhaba,&lt;/p&gt;<br />\r\n&lt;p&gt;Hesabınızı doğrulamak i&ccedil;in tıklayın:&lt;/p&gt;<br />\r\n&lt;a href=&quot;{{TRACKING_LINK}}&quot;&gt;Doğrula&lt;/a&gt;<br />\r\n&nbsp;</p>",
+    "created_at": "2026-04-12T10:29:03.432Z",
+    "landing_page": "microsoft"
+  }
+},
+{
+  "model": "phish_manager.target",
+  "pk": 34,
+  "fields": {
+    "email": "ahmed2021uni@gmail.com",
+    "first_name": "A",
+    "last_name": "A",
+    "group": ""
+  }
+},
+{
+  "model": "phish_manager.target",
+  "pk": 35,
+  "fields": {
+    "email": "nur554413@gmail.com",
+    "first_name": "muhammed",
+    "last_name": "nur",
+    "group": "tt"
+  }
+},
+{
+  "model": "phish_manager.target",
+  "pk": 36,
+  "fields": {
+    "email": "ahmed2022uni@gmail.com",
+    "first_name": "ahmet",
+    "last_name": "kss",
+    "group": "kss"
+  }
+},
+{
+  "model": "phish_manager.target",
+  "pk": 37,
+  "fields": {
+    "email": "root.sy.222@gmail.com",
+    "first_name": "mami",
+    "last_name": "mami",
+    "group": "oo"
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 21,
+  "fields": {
+    "campaign_name": "1",
+    "template": 5,
+    "target_group": "",
+    "start_date": "2026-04-06T19:59:57Z",
+    "end_date": "2026-04-06T19:59:59Z",
+    "status": "Completed",
+    "targets": [
+      34
+    ]
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 22,
+  "fields": {
+    "campaign_name": "test00",
+    "template": 4,
+    "target_group": "",
+    "start_date": "2026-04-07T07:57:56Z",
+    "end_date": "2026-04-07T07:58:02Z",
+    "status": "Completed",
+    "targets": [
+      34
+    ]
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 23,
+  "fields": {
+    "campaign_name": "test1",
+    "template": 6,
+    "target_group": "tt",
+    "start_date": "2026-04-12T13:30:00Z",
+    "end_date": "2026-04-12T13:30:00Z",
+    "status": "Completed",
+    "targets": []
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 24,
+  "fields": {
+    "campaign_name": "mami1",
+    "template": 6,
+    "target_group": "tt",
+    "start_date": "2026-04-12T13:46:00Z",
+    "end_date": "2026-04-12T13:46:00Z",
+    "status": "Completed",
+    "targets": []
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 25,
+  "fields": {
+    "campaign_name": "test1",
+    "template": 4,
+    "target_group": "kss",
+    "start_date": "2026-04-12T13:51:00Z",
+    "end_date": "2026-04-12T13:51:00Z",
+    "status": "Completed",
+    "targets": []
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 26,
+  "fields": {
+    "campaign_name": "alo1",
+    "template": 4,
+    "target_group": "kss",
+    "start_date": "2026-04-12T13:53:00Z",
+    "end_date": "2026-04-12T13:53:00Z",
+    "status": "Completed",
+    "targets": []
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 27,
+  "fields": {
+    "campaign_name": "ahmed",
+    "template": 6,
+    "target_group": "kss",
+    "start_date": "2026-04-12T11:01:00Z",
+    "end_date": "2026-04-12T08:01:00Z",
+    "status": "Completed",
+    "targets": []
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 28,
+  "fields": {
+    "campaign_name": "aaa",
+    "template": 6,
+    "target_group": "oo",
+    "start_date": "2026-04-21T11:48:00Z",
+    "end_date": "2026-04-21T11:48:00Z",
+    "status": "Completed",
+    "targets": []
+  }
+},
+{
+  "model": "phish_manager.campaign",
+  "pk": 29,
+  "fields": {
+    "campaign_name": "ppp",
+    "template": 5,
+    "target_group": "oo",
+    "start_date": "2026-04-21T11:51:00Z",
+    "end_date": "2026-04-21T11:51:00Z",
+    "status": "Completed",
+    "targets": []
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 76,
+  "fields": {
+    "campaign": 21,
+    "target": 34,
+    "status": "Submitted",
+    "last_updated": "2026-04-06T20:00:58.096Z",
+    "unique_event_id": "b97f2040-3230-4e95-bae5-e467ef980321",
+    "was_opened": false,
+    "was_clicked": true,
+    "was_submitted": true
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 77,
+  "fields": {
+    "campaign": 22,
+    "target": 34,
+    "status": "Submitted",
+    "last_updated": "2026-04-07T07:59:52.103Z",
+    "unique_event_id": "f5eeb754-aa53-4513-b2ea-535f8ae3986b",
+    "was_opened": false,
+    "was_clicked": true,
+    "was_submitted": true
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 78,
+  "fields": {
+    "campaign": 23,
+    "target": 35,
+    "status": "Sent",
+    "last_updated": "2026-04-12T10:30:30.514Z",
+    "unique_event_id": "dbead42f-3593-4941-805f-292eaef0544c",
+    "was_opened": false,
+    "was_clicked": false,
+    "was_submitted": false
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 79,
+  "fields": {
+    "campaign": 24,
+    "target": 35,
+    "status": "Submitted",
+    "last_updated": "2026-04-12T10:58:45.445Z",
+    "unique_event_id": "bd738842-c873-40e0-8390-68d71a0c0678",
+    "was_opened": true,
+    "was_clicked": true,
+    "was_submitted": true
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 80,
+  "fields": {
+    "campaign": 25,
+    "target": 36,
+    "status": "Sent",
+    "last_updated": "2026-04-12T10:51:01.526Z",
+    "unique_event_id": "12e1dc32-6c28-48b9-9983-862b20daa14a",
+    "was_opened": false,
+    "was_clicked": false,
+    "was_submitted": false
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 81,
+  "fields": {
+    "campaign": 26,
+    "target": 36,
+    "status": "Sent",
+    "last_updated": "2026-04-12T10:53:00.094Z",
+    "unique_event_id": "fc266e4a-c9ae-4493-8acf-39c6e4b98d17",
+    "was_opened": false,
+    "was_clicked": false,
+    "was_submitted": false
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 82,
+  "fields": {
+    "campaign": 26,
+    "target": 37,
+    "status": "Submitted",
+    "last_updated": "2026-04-12T11:07:11.852Z",
+    "unique_event_id": "f729a62a-d131-472b-843d-2e222954e7d5",
+    "was_opened": true,
+    "was_clicked": true,
+    "was_submitted": true
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 83,
+  "fields": {
+    "campaign": 27,
+    "target": 36,
+    "status": "Sent",
+    "last_updated": "2026-04-12T11:00:47.175Z",
+    "unique_event_id": "27ea58c0-a907-4376-9a8a-d4becb3ccfbe",
+    "was_opened": false,
+    "was_clicked": false,
+    "was_submitted": false
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 84,
+  "fields": {
+    "campaign": 27,
+    "target": 37,
+    "status": "Submitted",
+    "last_updated": "2026-04-12T11:02:04.073Z",
+    "unique_event_id": "623c5479-7f18-458f-9850-9b2b87d43700",
+    "was_opened": true,
+    "was_clicked": true,
+    "was_submitted": true
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 85,
+  "fields": {
+    "campaign": 28,
+    "target": 37,
+    "status": "Clicked",
+    "last_updated": "2026-04-21T08:48:34.992Z",
+    "unique_event_id": "1e12eca4-7f45-475f-9a9e-28d49d560c3b",
+    "was_opened": true,
+    "was_clicked": true,
+    "was_submitted": false
+  }
+},
+{
+  "model": "phish_manager.event",
+  "pk": 86,
+  "fields": {
+    "campaign": 29,
+    "target": 37,
+    "status": "Submitted",
+    "last_updated": "2026-04-21T08:51:57.846Z",
+    "unique_event_id": "14819ead-aaae-4648-9822-2cc980c9cb7b",
+    "was_opened": true,
+    "was_clicked": true,
+    "was_submitted": true
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-10-21T15:29:07.751Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "1",
+    "object_repr": "test1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-10-21T15:29:53.115Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "1",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-10-21T15:31:00.576Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "1",
+    "object_repr": "FirstCampaign",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-10-21T15:53:31.705Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "event"
+    ],
+    "object_id": "1",
+    "object_repr": "ahmed2022uni@gmail.com in FirstCampaign - Sent",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-10-21T15:54:10.932Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "1",
+    "object_repr": "test1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-10-21T15:54:19.363Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "1",
+    "object_repr": "FirstCampaign",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Start date\", \"End date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-10-21T16:02:48.844Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "event"
+    ],
+    "object_id": "2",
+    "object_repr": "ahmed2022uni@gmail.com in FirstCampaign - Sent",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-10-21T16:02:58.112Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "1",
+    "object_repr": "FirstCampaign",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Start date\", \"End date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-10-21T16:09:06.991Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "1",
+    "object_repr": "test1",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-10-21T16:09:11.575Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "event"
+    ],
+    "object_id": "3",
+    "object_repr": "ahmed2022uni@gmail.com in FirstCampaign - Sent",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-10-21T16:13:14.133Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "event"
+    ],
+    "object_id": "4",
+    "object_repr": "ahmed2022uni@gmail.com in FirstCampaign - Sent",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-10-21T16:16:28.610Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "event"
+    ],
+    "object_id": "5",
+    "object_repr": "ahmed2022uni@gmail.com in FirstCampaign - Sent",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-10-21T16:16:50.975Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "2",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-10-21T16:16:55.545Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "1",
+    "object_repr": "FirstCampaign",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\", \"Start date\", \"End date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-10-21T16:45:36.227Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "2",
+    "object_repr": "test0",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-10-21T16:45:47.641Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "event"
+    ],
+    "object_id": "6",
+    "object_repr": "ahmed2022uni@gmail.com in FirstCampaign - Sent",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-10-21T16:45:55.169Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "event"
+    ],
+    "object_id": "7",
+    "object_repr": "ahmed2021uni@gmail.com in FirstCampaign - Sent",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-10-21T16:46:12.850Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "1",
+    "object_repr": "FirstCampaign",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Template\", \"Start date\", \"End date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-10-21T18:52:45.702Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "2",
+    "object_repr": "test0",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-10-21T18:57:00.279Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "2",
+    "object_repr": "test0",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-01-08T18:55:21.125Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "3",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-01-08T18:55:49.381Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "4",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-01-08T18:59:07.128Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "2",
+    "object_repr": "FirstCampaign",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-01-08T19:04:46.699Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "2",
+    "object_repr": "CampTest",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Campaign name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-01-08T19:06:54.362Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "1",
+    "object_repr": "FirstCampaign",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-01-08T19:11:39.029Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "1",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-01-08T19:11:45.053Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "2",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-01-08T19:11:48.144Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "4",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-01-08T19:11:53.247Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "3",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-01-08T19:12:10.627Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "5",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-01-08T19:12:24.549Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "6",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-01-08T19:12:33.876Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "2",
+    "object_repr": "CampTest",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\", \"Start date\", \"End date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-01-08T19:13:19.749Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "6",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-01-08T19:16:20.714Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "3",
+    "object_repr": "FirstCampaign",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-01-08T19:16:41.762Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "3",
+    "object_repr": "FirstCampaign",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-01-08T19:16:41.762Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "2",
+    "object_repr": "CampTest",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-01-08T19:16:49.170Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "6",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-01-08T19:16:49.170Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "5",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-01-08T19:17:08.295Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "7",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-01-08T19:17:15.713Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "8",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-01-08T19:17:21.681Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "9",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-01-08T19:17:27.578Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "4",
+    "object_repr": "TEST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-01-08T22:17:24.726Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "3",
+    "object_repr": "Turkce temp",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-01-08T22:21:43.210Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "10",
+    "object_repr": "ndogan@fsm.edu.tr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-01-08T22:22:15.649Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "11",
+    "object_repr": "zkus@fsm.edu.tr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-01-08T22:22:35.782Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "12",
+    "object_repr": "bcan@fsm.edu.tr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-01-08T22:23:04.064Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "12",
+    "object_repr": "bcan@fsm.edu.tr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-01-08T22:23:04.064Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "11",
+    "object_repr": "zkus@fsm.edu.tr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-01-08T22:23:04.064Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "10",
+    "object_repr": "ndogan@fsm.edu.tr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-01-08T22:23:04.064Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "9",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-01-08T22:23:04.064Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "8",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-01-08T22:23:04.064Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "7",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-01-08T22:23:20.275Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "13",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-01-08T22:23:30.678Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "4",
+    "object_repr": "TEST",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-01-08T22:23:53.932Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "14",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-01-08T22:24:00.160Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "15",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-01-08T22:24:03.479Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "4",
+    "object_repr": "TEST",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-01-08T22:25:15.746Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "15",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-01-08T22:25:15.746Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "14",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-01-08T22:25:15.746Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "13",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-01-08T22:25:24.894Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "16",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-01-08T22:25:38.041Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "17",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-01-09T06:53:04.103Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "18",
+    "object_repr": "m.noor.alhajerhyem@stu.fsm.edu.tr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-01-09T06:53:16.867Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "5",
+    "object_repr": "LAST TEST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2026-01-09T06:56:06.534Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "18",
+    "object_repr": "m.noor.alhajerhyem@stu.fsm.edu.tr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2026-01-09T06:56:06.534Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "17",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2026-01-09T06:56:06.534Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "16",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2026-01-09T06:56:41.777Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "19",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2026-01-09T06:56:52.764Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "20",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2026-01-09T06:57:01.419Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "6",
+    "object_repr": "LAST TEST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2026-01-09T07:00:33.317Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "21",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2026-01-09T07:00:36.921Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "7",
+    "object_repr": "testtest",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2026-01-09T07:16:53.390Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "7",
+    "object_repr": "testtest",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2026-01-09T07:16:53.390Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "6",
+    "object_repr": "LAST TEST",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2026-01-09T07:16:53.390Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "5",
+    "object_repr": "LAST TEST",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2026-01-09T07:16:53.390Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "4",
+    "object_repr": "TEST",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2026-01-09T07:17:11.197Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "21",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2026-01-09T07:17:11.197Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "20",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2026-01-09T07:17:11.197Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "19",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2026-01-09T07:17:29.745Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "22",
+    "object_repr": "m.noor.alhajerhyem@stu.fsm.edu.tr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2026-01-09T07:17:56.092Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "23",
+    "object_repr": "ahmed.alatiah@stu.fsm.edu.tr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2026-01-09T07:17:58.163Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "8",
+    "object_repr": "TEST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2026-01-09T07:19:28.712Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "8",
+    "object_repr": "TEST",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2026-01-09T07:19:37.139Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "23",
+    "object_repr": "ahmed.alatiah@stu.fsm.edu.tr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 85,
+  "fields": {
+    "action_time": "2026-01-09T07:19:37.139Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "22",
+    "object_repr": "m.noor.alhajerhyem@stu.fsm.edu.tr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 86,
+  "fields": {
+    "action_time": "2026-01-09T07:20:14.738Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "24",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 87,
+  "fields": {
+    "action_time": "2026-01-09T07:20:35.006Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "25",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 88,
+  "fields": {
+    "action_time": "2026-01-09T07:20:38.095Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "9",
+    "object_repr": "TEST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 89,
+  "fields": {
+    "action_time": "2026-02-22T15:34:09.793Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "10",
+    "object_repr": "TESTKADIR",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 90,
+  "fields": {
+    "action_time": "2026-02-22T15:38:06.253Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "25",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 91,
+  "fields": {
+    "action_time": "2026-02-22T15:38:06.253Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "24",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 92,
+  "fields": {
+    "action_time": "2026-02-22T15:38:12.394Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "10",
+    "object_repr": "TESTKADIR",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 93,
+  "fields": {
+    "action_time": "2026-02-22T15:38:12.394Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "9",
+    "object_repr": "TEST",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 94,
+  "fields": {
+    "action_time": "2026-02-22T15:38:36.114Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "26",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 95,
+  "fields": {
+    "action_time": "2026-02-22T15:38:50.967Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "27",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 96,
+  "fields": {
+    "action_time": "2026-02-22T15:38:54.104Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "11",
+    "object_repr": "TEST FOR ABU HALEP",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 97,
+  "fields": {
+    "action_time": "2026-02-22T15:40:06.163Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "28",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 98,
+  "fields": {
+    "action_time": "2026-02-22T15:40:55.431Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "11",
+    "object_repr": "TEST FOR ABU HALEP",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\", \"Start date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 99,
+  "fields": {
+    "action_time": "2026-02-22T15:41:45.960Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "29",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 100,
+  "fields": {
+    "action_time": "2026-02-22T15:41:50.898Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "11",
+    "object_repr": "TEST FOR ABU HALEP",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 101,
+  "fields": {
+    "action_time": "2026-02-22T15:44:20.657Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "30",
+    "object_repr": "grand.syr1@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 102,
+  "fields": {
+    "action_time": "2026-02-22T15:44:52.137Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "11",
+    "object_repr": "TEST FOR ABU HALEP",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 103,
+  "fields": {
+    "action_time": "2026-02-22T15:45:04.414Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "11",
+    "object_repr": "TEST FOR ABU HALEP",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Start date\", \"End date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 104,
+  "fields": {
+    "action_time": "2026-02-22T15:45:50.897Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "11",
+    "object_repr": "TEST FOR ABU HALEP",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 105,
+  "fields": {
+    "action_time": "2026-02-22T15:45:56.846Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "30",
+    "object_repr": "grand.syr1@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 106,
+  "fields": {
+    "action_time": "2026-02-22T15:45:56.846Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "29",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 107,
+  "fields": {
+    "action_time": "2026-02-22T15:45:56.846Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "28",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 108,
+  "fields": {
+    "action_time": "2026-02-22T15:45:56.846Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "27",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 109,
+  "fields": {
+    "action_time": "2026-02-22T15:45:56.846Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "26",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 110,
+  "fields": {
+    "action_time": "2026-02-22T15:46:29.529Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "31",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 111,
+  "fields": {
+    "action_time": "2026-02-22T15:46:42.327Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "32",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 112,
+  "fields": {
+    "action_time": "2026-02-22T15:47:00.453Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "33",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 113,
+  "fields": {
+    "action_time": "2026-02-22T15:47:55.160Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "12",
+    "object_repr": "TEST FOR AHMED",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 114,
+  "fields": {
+    "action_time": "2026-02-22T15:48:51.249Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "12",
+    "object_repr": "TEST FOR AHMED",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\", \"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 115,
+  "fields": {
+    "action_time": "2026-02-22T15:49:41.386Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "12",
+    "object_repr": "TEST FOR AHMED",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Targets\", \"Start date\", \"End date\", \"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 116,
+  "fields": {
+    "action_time": "2026-03-20T17:23:14.300Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "33",
+    "object_repr": "Root.sy.222@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 117,
+  "fields": {
+    "action_time": "2026-03-20T17:23:14.300Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "32",
+    "object_repr": "nur554413@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 118,
+  "fields": {
+    "action_time": "2026-03-20T17:23:14.300Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "31",
+    "object_repr": "ahmed2022uni@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 119,
+  "fields": {
+    "action_time": "2026-03-20T17:23:23.349Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "12",
+    "object_repr": "TEST FOR AHMED",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 120,
+  "fields": {
+    "action_time": "2026-03-20T17:24:06.683Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "target"
+    ],
+    "object_id": "34",
+    "object_repr": "ahmed2021uni@gmail.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 121,
+  "fields": {
+    "action_time": "2026-03-20T17:24:34.587Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "13",
+    "object_repr": "TEST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 122,
+  "fields": {
+    "action_time": "2026-03-20T17:29:43.084Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "2",
+    "object_repr": "test0",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 123,
+  "fields": {
+    "action_time": "2026-03-20T17:29:43.084Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "1",
+    "object_repr": "test1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 124,
+  "fields": {
+    "action_time": "2026-03-20T17:41:32.757Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "3",
+    "object_repr": "Turkce temp",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 125,
+  "fields": {
+    "action_time": "2026-03-20T17:46:22.478Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "3",
+    "object_repr": "Turkce temp",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 126,
+  "fields": {
+    "action_time": "2026-03-21T05:48:28.495Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "14",
+    "object_repr": "testttt",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 127,
+  "fields": {
+    "action_time": "2026-03-21T08:34:08.696Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "14",
+    "object_repr": "testttt",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 128,
+  "fields": {
+    "action_time": "2026-03-22T05:18:09.930Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "14",
+    "object_repr": "testttt",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 129,
+  "fields": {
+    "action_time": "2026-03-22T05:18:09.930Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "13",
+    "object_repr": "TEST",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 130,
+  "fields": {
+    "action_time": "2026-03-22T05:18:34.284Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "15",
+    "object_repr": "TEST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 131,
+  "fields": {
+    "action_time": "2026-03-22T05:36:27.795Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "HACKERS",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 132,
+  "fields": {
+    "action_time": "2026-03-22T05:37:05.010Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "object_id": "1",
+    "object_repr": "HACKERS",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 133,
+  "fields": {
+    "action_time": "2026-03-22T05:48:42.238Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "15",
+    "object_repr": "TEST",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 134,
+  "fields": {
+    "action_time": "2026-03-22T05:51:02.848Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "4",
+    "object_repr": "Linkedin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 135,
+  "fields": {
+    "action_time": "2026-03-22T05:52:18.935Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "5",
+    "object_repr": "Instagram",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 136,
+  "fields": {
+    "action_time": "2026-03-22T05:52:47.958Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "16",
+    "object_repr": "tesstt",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 137,
+  "fields": {
+    "action_time": "2026-03-22T05:54:19.504Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "17",
+    "object_repr": "aaaa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 138,
+  "fields": {
+    "action_time": "2026-03-22T13:43:33.112Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "18",
+    "object_repr": "TEST FOR AHMED",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 139,
+  "fields": {
+    "action_time": "2026-04-06T19:56:11.238Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "19",
+    "object_repr": "test1234",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 140,
+  "fields": {
+    "action_time": "2026-04-06T19:58:26.671Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "20",
+    "object_repr": "1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 141,
+  "fields": {
+    "action_time": "2026-04-06T19:59:38.666Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "20",
+    "object_repr": "1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 142,
+  "fields": {
+    "action_time": "2026-04-06T19:59:38.666Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "19",
+    "object_repr": "test1234",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 143,
+  "fields": {
+    "action_time": "2026-04-06T19:59:38.666Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "18",
+    "object_repr": "TEST FOR AHMED",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 144,
+  "fields": {
+    "action_time": "2026-04-06T19:59:38.666Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "17",
+    "object_repr": "aaaa",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 145,
+  "fields": {
+    "action_time": "2026-04-06T19:59:38.666Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "16",
+    "object_repr": "tesstt",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 146,
+  "fields": {
+    "action_time": "2026-04-06T20:00:02.717Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "21",
+    "object_repr": "1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 147,
+  "fields": {
+    "action_time": "2026-04-07T07:58:07.702Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "phish_manager",
+      "campaign"
+    ],
+    "object_id": "22",
+    "object_repr": "test00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 148,
+  "fields": {
+    "action_time": "2026-04-12T10:29:03.434Z",
+    "user": [
+      "muhammed"
+    ],
+    "content_type": [
+      "phish_manager",
+      "emailtemplate"
+    ],
+    "object_id": "6",
+    "object_repr": "test1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]
