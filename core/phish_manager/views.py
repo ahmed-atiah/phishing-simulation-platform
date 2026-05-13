@@ -1,12 +1,22 @@
 import csv
 import io
 import uuid
+import threading
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+
+
+def _launch_in_background(campaign_id):
+    from .services import start_campaign
+    try:
+        start_campaign(campaign_id)
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).error(f"[BG] Kampanya {campaign_id} başlatma hatası: {e}")
 
 from .models import Campaign, Event, Target
 from .services import check_campaign_completion
@@ -207,8 +217,8 @@ def panel_campaign_new(request):
                 campaign.targets.set(Target.objects.filter(id__in=target_ids))
 
             if action == 'launch':
-                from .services import start_campaign
-                start_campaign(campaign.id)
+                t = threading.Thread(target=_launch_in_background, args=(campaign.id,), daemon=True)
+                t.start()
 
             from django.contrib import messages as dj_messages
             dj_messages.success(request, f"Kampanya '{name}' oluşturuldu.")
@@ -231,8 +241,8 @@ def panel_campaign_launch(request, campaign_id):
     if request.method == 'POST':
         campaign = get_object_or_404(Campaign, id=campaign_id)
         if campaign.status == 'Scheduled':
-            from .services import start_campaign
-            start_campaign(campaign.id)
+            t = threading.Thread(target=_launch_in_background, args=(campaign.id,), daemon=True)
+            t.start()
             from django.contrib import messages as dj_messages
             dj_messages.success(request, f"'{campaign.campaign_name}' başlatıldı.")
         return redirect('/panel/campaigns/')
