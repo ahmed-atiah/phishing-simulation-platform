@@ -236,14 +236,22 @@ UNFOLD = {
         ],
     },
 }
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@example.com')
+DEFAULT_FROM_EMAIL  = config('DEFAULT_FROM_EMAIL',  default='noreply@example.com')
+EMAIL_HOST_USER     = config('EMAIL_HOST_USER',     default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+EMAIL_HOST    = config('EMAIL_HOST',    default='smtp.gmail.com')
+EMAIL_PORT    = config('EMAIL_PORT',    default=587, cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+EMAIL_TIMEOUT = 10
 
 RESEND_API_KEY = config('RESEND_API_KEY', default='')
 
 if RESEND_API_KEY:
-    # Resend HTTP API — Railway SMTP portu blokluyor, bu çalışıyor
+    # Railway gibi SMTP'nin bloklandığı ortamlar için Resend HTTP API
     EMAIL_BACKEND = 'anymail.backends.resend.EmailBackend'
     ANYMAIL = {'RESEND_API_KEY': RESEND_API_KEY}
+elif EMAIL_HOST_USER:
+    # PythonAnywhere / VPS gibi SMTP'nin çalıştığı ortamlar için Gmail
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 else:
-    # Geliştirme ortamı — terminale yaz
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

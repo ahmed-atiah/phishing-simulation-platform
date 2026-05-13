@@ -6,12 +6,15 @@ class PhishManagerConfig(AppConfig):
     name = 'phish_manager'
 
     def ready(self):
-        import os
-        # Dev server: RUN_MAIN='true' → ana process, başlat
-        # Gunicorn/Railway: RUN_MAIN set edilmez → DATABASE_URL varsa prodüksiyondayız, başlat
-        # Hiçbiri değilse (dev server'ın reloader process'i) → atla
+        import os, sys
+        if 'test' in sys.argv:
+            return
         run_main = os.environ.get('RUN_MAIN')
-        in_production = os.environ.get('DATABASE_URL') is not None
+        # Dev server inner process, Railway (DATABASE_URL), veya PythonAnywhere (SCHEDULER_ENABLED)
+        in_production = (
+            os.environ.get('DATABASE_URL') is not None or
+            os.environ.get('SCHEDULER_ENABLED', '').lower() == 'true'
+        )
         if run_main != 'true' and not in_production:
             return
         from .scheduler import start_scheduler
