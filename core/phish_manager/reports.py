@@ -1,7 +1,32 @@
 from io import BytesIO
 from datetime import datetime
+import os
+import glob
 
 from .models import Event
+
+
+def _register_unicode_font():
+    """DejaVu font varsa kaydet, yoksa None döndür (Helvetica'ya düşer)."""
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+
+    candidates = [
+        os.path.join(os.path.dirname(__file__), '..', '..', 'fonts', 'DejaVuSans.ttf'),
+        '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+        '/usr/share/fonts/dejavu/DejaVuSans.ttf',
+    ] + glob.glob('/nix/store/*/share/fonts/truetype/DejaVuSans.ttf')
+
+    for path in candidates:
+        path = os.path.normpath(path)
+        if os.path.isfile(path):
+            try:
+                pdfmetrics.registerFont(TTFont('DejaVu', path))
+                pdfmetrics.registerFont(TTFont('DejaVu-Bold', path))
+                return 'DejaVu', 'DejaVu-Bold'
+            except Exception:
+                continue
+    return 'Helvetica', 'Helvetica-Bold'
 
 
 # ─── PDF ──────────────────────────────────────────────────────────────────────
@@ -14,15 +39,17 @@ def generate_pdf_report(campaign):
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.lib.enums import TA_CENTER
 
+    font_normal, font_bold = _register_unicode_font()
+
     buffer = BytesIO()
     doc = SimpleDocTemplate(buffer, pagesize=A4,
                             leftMargin=2*cm, rightMargin=2*cm,
                             topMargin=2*cm, bottomMargin=2*cm)
 
     styles = getSampleStyleSheet()
-    title_style = ParagraphStyle('Title', parent=styles['Title'], fontSize=18, spaceAfter=6)
-    sub_style   = ParagraphStyle('Sub',   parent=styles['Normal'], fontSize=10, textColor=colors.grey)
-    section_style = ParagraphStyle('Section', parent=styles['Heading2'], fontSize=12, spaceBefore=14, spaceAfter=6)
+    title_style = ParagraphStyle('Title', parent=styles['Title'], fontSize=18, spaceAfter=6, fontName=font_bold)
+    sub_style   = ParagraphStyle('Sub',   parent=styles['Normal'], fontSize=10, textColor=colors.grey, fontName=font_normal)
+    section_style = ParagraphStyle('Section', parent=styles['Heading2'], fontSize=12, spaceBefore=14, spaceAfter=6, fontName=font_bold)
 
     events = Event.objects.filter(campaign=campaign).select_related('target')
     sent      = events.count()
@@ -35,7 +62,7 @@ def generate_pdf_report(campaign):
 
     # ── Başlık
     elements.append(Paragraph("Cyber Aware — Kampanya Raporu", title_style))
-    elements.append(Paragraph(campaign.campaign_name, ParagraphStyle('CName', parent=styles['Normal'], fontSize=14, spaceAfter=4)))
+    elements.append(Paragraph(campaign.campaign_name, ParagraphStyle('CName', parent=styles['Normal'], fontSize=14, spaceAfter=4, fontName=font_bold)))
     elements.append(Paragraph(f"Rapor tarihi: {datetime.now().strftime('%d.%m.%Y %H:%M')}", sub_style))
     elements.append(Spacer(1, 0.4*cm))
 
@@ -53,7 +80,8 @@ def generate_pdf_report(campaign):
     info_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#2c3e50')),
         ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
-        ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTNAME',   (0, 0), (-1, 0), font_bold),
+        ('FONTNAME',   (0, 1), (-1, -1), font_normal),
         ('FONTSIZE',   (0, 0), (-1, -1), 10),
         ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f2f2f2')]),
         ('GRID',       (0, 0), (-1, -1), 0.5, colors.grey),
@@ -75,11 +103,11 @@ def generate_pdf_report(campaign):
     summary_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#2980b9')),
         ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
-        ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTNAME',   (0, 0), (-1, 0), font_bold),
         ('ALIGN',      (0, 0), (-1, -1), 'CENTER'),
         ('FONTSIZE',   (0, 0), (-1, -1), 10),
         ('BACKGROUND', (0, 1), (-1, 1), colors.HexColor('#d6eaf8')),
-        ('FONTNAME',   (0, 1), (-1, 1), 'Helvetica-Bold'),
+        ('FONTNAME',   (0, 1), (-1, 1), font_bold),
         ('FONTSIZE',   (0, 1), (-1, 1), 12),
         ('GRID',       (0, 0), (-1, -1), 0.5, colors.grey),
         ('TOPPADDING',   (0, 0), (-1, -1), 6),
@@ -108,7 +136,8 @@ def generate_pdf_report(campaign):
     target_table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#2c3e50')),
         ('TEXTCOLOR',  (0, 0), (-1, 0), colors.white),
-        ('FONTNAME',   (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTNAME',   (0, 0), (-1, 0), font_bold),
+        ('FONTNAME',   (0, 1), (-1, -1), font_normal),
         ('FONTSIZE',   (0, 0), (-1, -1), 8),
         ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f2f2f2')]),
         ('GRID',       (0, 0), (-1, -1), 0.5, colors.grey),

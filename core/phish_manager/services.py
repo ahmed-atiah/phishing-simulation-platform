@@ -1,11 +1,14 @@
 from urllib.parse import unquote
 from django.utils import timezone
 import uuid
+import logging
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.utils.html import strip_tags
 from decouple import config
 from .models import Campaign, Event, Target
+
+logger = logging.getLogger(__name__)
 
 BASE_TRACKING_URL = config('BASE_TRACKING_URL', default='http://127.0.0.1:8000/track/')
 
@@ -36,7 +39,12 @@ def start_campaign(campaign_id):
         targets = campaign.targets.all()
         print(f"Starting campaign: {campaign.campaign_name} for {targets.count()} target(s)...")
 
+    already_sent = set(Event.objects.filter(campaign=campaign).values_list('target_id', flat=True))
+
     for target in targets:
+        if target.id in already_sent:
+            print(f"Skipping {target.email} — already has an event for this campaign.")
+            continue
         event = Event.objects.create(campaign=campaign, target=target, status='Sent')
         tracking_link = f"{BASE_TRACKING_URL}{event.unique_event_id}/"
 
@@ -62,7 +70,7 @@ def start_campaign(campaign_id):
             print(f"Successfully sent email to: {target.email}")
 
         except Exception as e:
-            print(f"!!! Failed to send email to {target.email}: {e}")
+            logger.error(f"[Mail] {target.email} gönderilemedi: {type(e).__name__}: {e}")
             event.status = 'Failed'
             event.save()
 
