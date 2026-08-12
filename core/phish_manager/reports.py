@@ -11,8 +11,12 @@ def _register_unicode_font():
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
 
+    _base = os.path.dirname(os.path.abspath(__file__))
     candidates = [
-        os.path.join(os.path.dirname(__file__), '..', '..', 'fonts', 'DejaVuSans.ttf'),
+        os.path.join(_base, 'fonts', 'DejaVuSans.ttf'),
+        os.path.join(_base, '..', 'fonts', 'DejaVuSans.ttf'),
+        os.path.join(_base, '..', '..', 'fonts', 'DejaVuSans.ttf'),
+        'C:/Windows/Fonts/DejaVuSans.ttf',
         '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
         '/usr/share/fonts/dejavu/DejaVuSans.ttf',
     ] + glob.glob('/nix/store/*/share/fonts/truetype/DejaVuSans.ttf')
