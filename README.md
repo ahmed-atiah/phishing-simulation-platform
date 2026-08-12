@@ -32,15 +32,23 @@ A web-based platform for running internal phishing simulations to measure and im
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/muhammednur-hub/phishing-platform.git
-cd phishing-platform
+git clone https://github.com/ahmed-atiah/phishing-simulation-platform.git
+cd phishing-simulation-platform/core
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Activate it
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Copy environment template and fill in your own values
+cp .env.example .env
 
 # Run migrations
 python manage.py migrate
@@ -72,4 +80,4 @@ This tool is designed for **authorized internal security testing only**. Always 
 
 ---
 
-Built by [Muhammed Nur](https://github.com/muhammednur-hub)
+Built by [Ahmed Atiah](https://github.com/ahmed-atiah)
